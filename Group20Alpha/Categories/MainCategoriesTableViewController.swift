@@ -5,6 +5,7 @@
 //  Created by Brandon Head on 4/25/18.
 //  Copyright © 2018 Group 20. All rights reserved.
 //
+//ADAM WAS HERE PART 2
 
 import UIKit
 import Foundation   //Still don't know if we need this or not. Honestly have no fucking clue what Foundation even does.
