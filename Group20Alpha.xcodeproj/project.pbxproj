@@ -163,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				FA1D551520904C900022AE4B /* Posts */,
-				FA8541D7208C243700C6279C /* Expanded Category */,
 				FA8541CE208C1C9000C6279C /* Categories */,
 				E43BD34E2073CAB50023BF34 /* Supporting Files */,
 				E43BD34D2073CA500023BF34 /* Extensions */,
@@ -191,13 +190,6 @@
 				FA1D551320904C170022AE4B /* SubCategoryTableViewController.swift */,
 			);
 			path = Categories;
-			sourceTree = "<group>";
-		};
-		FA8541D7208C243700C6279C /* Expanded Category */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Expanded Category";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
