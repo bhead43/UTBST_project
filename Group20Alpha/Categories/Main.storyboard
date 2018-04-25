@@ -126,6 +126,13 @@
                                     <action selector="loginButtonPressed:" destination="uIi-7K-FFW" eventType="touchUpInside" id="hGl-AX-4JJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Extra Change" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uQM-2f-Jzs">
+                                <rect key="frame" x="57" y="521" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="QLh-nT-bRF"/>
@@ -229,7 +236,6 @@
         <!--Main Categories Table View Controller-->
         <scene sceneID="SdF-I2-1LU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RJM-PB-Hrk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="wwq-i1-VWP" customClass="MainCategoriesTableViewController" customModule="Group20Alpha" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="UMv-tb-kpt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -263,6 +269,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RJM-PB-Hrk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="906" y="1800"/>
         </scene>
