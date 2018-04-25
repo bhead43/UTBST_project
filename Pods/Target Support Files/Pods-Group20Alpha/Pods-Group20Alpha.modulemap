@@ -1,0 +1,6 @@
+framework module Pods_Group20Alpha {
+  umbrella header "Pods-Group20Alpha-umbrella.h"
+
+  export *
+  module * { export * }
+}
