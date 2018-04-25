@@ -29,7 +29,6 @@
 		FA1D551D209072160022AE4B /* DataLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D551C209072160022AE4B /* DataLists.swift */; };
 		FA44B0DB2086B92A000A3903 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA44B0DA2086B92A000A3903 /* GoogleService-Info.plist */; };
 		FA8541D6208C228A00C6279C /* UILable_Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8541D5208C228A00C6279C /* UILable_Extenstion.swift */; };
-		FA8541D9208C245300C6279C /* ExpandedCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8541D8208C245300C6279C /* ExpandedCategoryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +58,6 @@
 		FA1D551C209072160022AE4B /* DataLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLists.swift; sourceTree = "<group>"; };
 		FA44B0DA2086B92A000A3903 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA8541D5208C228A00C6279C /* UILable_Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILable_Extenstion.swift; sourceTree = "<group>"; };
-		FA8541D8208C245300C6279C /* ExpandedCategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCategoryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +196,6 @@
 		FA8541D7208C243700C6279C /* Expanded Category */ = {
 			isa = PBXGroup;
 			children = (
-				FA8541D8208C245300C6279C /* ExpandedCategoryController.swift */,
 			);
 			path = "Expanded Category";
 			sourceTree = "<group>";
@@ -352,7 +349,6 @@
 				FA1D551420904C170022AE4B /* SubCategoryTableViewController.swift in Sources */,
 				FA1D551B2090503B0022AE4B /* Post.swift in Sources */,
 				FA8541D6208C228A00C6279C /* UILable_Extenstion.swift in Sources */,
-				FA8541D9208C245300C6279C /* ExpandedCategoryController.swift in Sources */,
 				BDD1BE2020744616007F0A0C /* UIButton_Extension.swift in Sources */,
 				FA1D550C208FF5750022AE4B /* LoginViewController.swift in Sources */,
 				FA1D5512209047520022AE4B /* MainCategoriesTableViewController.swift in Sources */,
