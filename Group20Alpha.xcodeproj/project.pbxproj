@@ -99,13 +99,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		BDF527212092D53A00715B8E /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		E43BD34D2073CA500023BF34 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +162,6 @@
 		E491C5782061D56F0008318F /* Group20Alpha */ = {
 			isa = PBXGroup;
 			children = (
-				BDF527212092D53A00715B8E /* New Group */,
 				FA1D551520904C900022AE4B /* Posts */,
 				FA8541CE208C1C9000C6279C /* Categories */,
 				E43BD34E2073CAB50023BF34 /* Supporting Files */,
@@ -212,7 +204,6 @@
 				E491C5732061D56F0008318F /* Frameworks */,
 				E491C5742061D56F0008318F /* Resources */,
 				50ED3F4562DA026D7BE615E2 /* [CP] Embed Pods Frameworks */,
-				2004243FC3BEABA39C862C52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,28 +263,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2004243FC3BEABA39C862C52 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha-resources.sh",
-				"${PODS_ROOT}/FirebaseInvites/Resources/GINInviteResources.bundle",
-				"${PODS_ROOT}/FirebaseInvites/Resources/GPPACLPickerResources.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GINInviteResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GPPACLPickerResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		49D6AF7D2296BBB8EF0CB3F5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,6 +290,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -328,6 +299,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
