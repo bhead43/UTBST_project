@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Foundation
 
 class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -89,7 +90,41 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             "userID": Auth.auth().currentUser?.uid
         ]
         //Push to the database
-        self.ref.child(postCategory).childByAutoId().setValue(postData)
+        //let autoID = String((Date().timeIntervalSince1970 * 1000.0).rounded())
+        let autoIdInt = Int((Date().timeIntervalSince1970 * 1000).rounded())
+        let autoID = String(autoIdInt)
+        //Debug
+        print(autoID)
+        self.ref.child(postCategory).child(autoID).setValue(postData)
+        
+        ref?.child("users").child((Auth.auth().currentUser?.uid)!)
+                    .observeSingleEvent(of: .value, with: { (snapshot) in
+        
+                        let userDict = snapshot.value as! [String: Any]
+        
+                        var totalPosts = userDict["numPosts"] as! Int
+//                        var displayName = userDict["name"] as! String
+//                        var postList = userDict["posts"] as! [String]
+                        totalPosts += 1
+                        
+                        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["numPosts": totalPosts])
+                        
+                        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).child("posts").setValue([String(totalPosts): autoID])
+        
+                    })
+        //self.ref.child((Auth.auth().currentUser?.uid)!).child("posts").setValue([String])
+        //self.ref.child((Auth.auth().currentUser?.uid)!).setValue(["Post": autoID])  //Why is this making a whole new thing?
+//        ref?.child("users").child((Auth.auth().currentUser?.uid)!)
+//            .observeSingleEvent(of: .value, with: { (snapshot) in
+//
+//                let userDict = snapshot.value as! [String: Any]
+//
+//                var postList = userDict["posts"] as! [String]
+//                postList.append(autoID)
+//
+//            })
+//
+        
         
         //And head back to the last visited page (should be the beautiful landing page right now)
         self.dismiss(animated: true, completion: nil)   //Does having a navigation controller completely negate this? That's unfortunate :(
