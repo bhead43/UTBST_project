@@ -99,6 +99,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BDF527212092D53A00715B8E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		E43BD34D2073CA500023BF34 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +169,7 @@
 		E491C5782061D56F0008318F /* Group20Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				BDF527212092D53A00715B8E /* New Group */,
 				FA1D551520904C900022AE4B /* Posts */,
 				FA8541CE208C1C9000C6279C /* Categories */,
 				E43BD34E2073CAB50023BF34 /* Supporting Files */,
