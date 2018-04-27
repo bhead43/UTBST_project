@@ -51,8 +51,13 @@ class SignupViewController: UIViewController {
         guard let password = passwordField.text else { return }
         guard let name = nameField.text else { return }
         
+        //stuff for user's posts
+        let posts: [String] = ["Don't look at me!"]
+        
         let userData: [String: Any] = [
-            "name": name
+            "name": name,
+            "posts": posts,
+            "numPosts": 0
         ]
         
         //Creates a new user in the Firebase database
