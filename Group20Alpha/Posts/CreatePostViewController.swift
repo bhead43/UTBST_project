@@ -81,22 +81,25 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         let postPrice: String = priceField.text!    //This is making a pretty big assumption that there'll only be numbers in that field... Should probably add some failsafes later
         let postCategory: String = selectedCategory
         
+        let autoIdInt = Int((Date().timeIntervalSince1970 * 1000).rounded())
+        let autoID = String(autoIdInt)
+        //Debug
+        print(autoID)
+        
         //Put all of this stuff into a Firebase friendly thing
         let postData: [String: Any] = [
             "title": postTitle,
             "description": postDescription,
             "price": postPrice,
             "category": postCategory,
-            "userID": Auth.auth().currentUser?.uid
+            "userID": Auth.auth().currentUser?.uid,
+            "postID": autoID    //Probably wouldn't hurt to save this as a part of the post as well. Will almost certainly make life better in the future.
         ]
         //Push to the database
         //let autoID = String((Date().timeIntervalSince1970 * 1000.0).rounded())
-        let autoIdInt = Int((Date().timeIntervalSince1970 * 1000).rounded())
-        let autoID = String(autoIdInt)
-        //Debug
-        print(autoID)
         self.ref.child(postCategory).child(autoID).setValue(postData)
         
+        //This all works now! DON'T TOUCH THIS FOR THE LOVE OF ALL THAT IS HOLY
         ref?.child("users").child((Auth.auth().currentUser?.uid)!)
                     .observeSingleEvent(of: .value, with: { (snapshot) in
         
@@ -112,29 +115,15 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
                             "name": displayName,
                             "posts": postList,
                             "numPosts": totalPosts
-                        ]   //Recreates the user from scratch with all it's all stuff, should fix things. At the very least, will avoid deleting all of it's info upon adding a post
+                        ]   //This creates a data set with everything the user needs.
                         
-                        //self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["numPosts": totalPosts])
-                        
-                        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Recreate the user with new info!
+                        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Updates the user with ALL of its info, even the sutff that didn't get touched (display name, previous posts)
         
                     })
-        //self.ref.child((Auth.auth().currentUser?.uid)!).child("posts").setValue([String])
-        //self.ref.child((Auth.auth().currentUser?.uid)!).setValue(["Post": autoID])  //Why is this making a whole new thing?
-//        ref?.child("users").child((Auth.auth().currentUser?.uid)!)
-//            .observeSingleEvent(of: .value, with: { (snapshot) in
-//
-//                let userDict = snapshot.value as! [String: Any]
-//
-//                var postList = userDict["posts"] as! [String]
-//                postList.append(autoID)
-//
-//            })
-//
-        
         
         //And head back to the last visited page (should be the beautiful landing page right now)
-        self.dismiss(animated: true, completion: nil)   //Does having a navigation controller completely negate this? That's unfortunate :(
+        //self.dismiss(animated: true, completion: nil)   //Does having a navigation controller completely negate this? That's unfortunate :(
+        //We should probably implement a segue or something and trigger it here in place of the dismiss. It makes for nice feedback that you actually did something.
     }
     
 }

@@ -28,6 +28,7 @@
 		FA1D551920904FC10022AE4B /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D551820904FC10022AE4B /* CreatePostViewController.swift */; };
 		FA1D551B2090503B0022AE4B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D551A2090503B0022AE4B /* Post.swift */; };
 		FA1D551D209072160022AE4B /* DataLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D551C209072160022AE4B /* DataLists.swift */; };
+		FA30AEAB209576170045D9E9 /* ManagePostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30AEAA209576170045D9E9 /* ManagePostsTableViewController.swift */; };
 		FA44B0DB2086B92A000A3903 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA44B0DA2086B92A000A3903 /* GoogleService-Info.plist */; };
 		FA8541D6208C228A00C6279C /* UILable_Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8541D5208C228A00C6279C /* UILable_Extenstion.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		FA1D551820904FC10022AE4B /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		FA1D551A2090503B0022AE4B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FA1D551C209072160022AE4B /* DataLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLists.swift; sourceTree = "<group>"; };
+		FA30AEAA209576170045D9E9 /* ManagePostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostsTableViewController.swift; sourceTree = "<group>"; };
 		FA44B0DA2086B92A000A3903 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA8541D5208C228A00C6279C /* UILable_Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILable_Extenstion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +191,7 @@
 			children = (
 				FA1D551620904CA80022AE4B /* PostViewController.swift */,
 				FA1D551820904FC10022AE4B /* CreatePostViewController.swift */,
+				FA30AEAA209576170045D9E9 /* ManagePostsTableViewController.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				E491C5822061D56F0008318F /* Group20Alpha.xcdatamodeld in Sources */,
 				BDD1BE162073E281007F0A0C /* appUser.swift in Sources */,
 				BD7074132093053E00FC8B01 /* MessagesTableViewController.swift in Sources */,
+				FA30AEAB209576170045D9E9 /* ManagePostsTableViewController.swift in Sources */,
 				E491C57A2061D56F0008318F /* AppDelegate.swift in Sources */,
 				FA1D551D209072160022AE4B /* DataLists.swift in Sources */,
 				FA1D550E208FFC150022AE4B /* SignupViewController.swift in Sources */,

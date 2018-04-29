@@ -36,9 +36,10 @@ class SubCategoryTableViewController: UITableViewController {
                     let postPrice = postObject?["price"]
                     let postCategory = postObject?["category"]
                     let postUserID = postObject?["userID"]
+                    let postID = postObject?["postID"]
                     
                     //creating post object with model and fetched values
-                    let post = Post(title: postTitle as! String, description: postDescription as! String, price: postPrice as! String, category: postCategory as! String, userID: postUserID as! String)
+                    let post = Post(title: postTitle as! String, description: postDescription as! String, price: postPrice as! String, category: postCategory as! String, userID: postUserID as! String, id: postID as! String)
                     
                     //appending it to list
                     self.postList.append(post)
