@@ -43,6 +43,16 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
 
         // Do any additional setup after loading the view.
     }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            self.imageView.image = image
+            selectButton.isHidden = true
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
