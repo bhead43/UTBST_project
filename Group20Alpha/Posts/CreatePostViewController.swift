@@ -13,11 +13,14 @@ import Foundation
 class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var ref: DatabaseReference!
+    var picker = UIImagePickerController()
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptField: UITextView!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var catPicker: UIPickerView!
+    @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     var selectedCategory: String = "Clothing"
     
@@ -44,6 +47,13 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func selectPicturePressed(_ sender: Any) {
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        
+        self.present(picker, animated: true, completion: nil)
     }
     
     //Pickerview Stuff!
