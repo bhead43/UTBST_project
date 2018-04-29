@@ -1,55 +1,17 @@
 //
-//  SubCategoryTableViewController.swift
+//  MessagesTableViewController.swift
 //  Group20Alpha
 //
-//  Created by Brandon Head on 4/25/18.
+//  Created by Adam Luna on 4/27/18.
 //  Copyright © 2018 Group 20. All rights reserved.
 //
 
 import UIKit
-import Firebase
 
-class SubCategoryTableViewController: UITableViewController {
-    var ref: DatabaseReference!
+class MessagesTableViewController: UITableViewController {
 
-    var category: String?    //This gets set in the prepareForSegue deal in the other controller? Maybe? It shouldn't ever be nil, I don't think.
-    var postList: [Post] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ref = Database.database().reference().child(category!)
-        
-        ref.observe(DataEventType.value, with: { (snapshot) in
-            
-            //if the reference have some values
-            if snapshot.childrenCount > 0 {
-                
-                //clearing the list
-                self.postList.removeAll()
-                
-                //iterating through all the values
-                for posts in snapshot.children.allObjects as! [DataSnapshot] {
-                    //getting values
-                    let postObject = posts.value as? [String: AnyObject]
-                    let postTitle  = postObject?["title"]
-                    let postDescription  = postObject?["description"]
-                    let postPrice = postObject?["price"]
-                    let postCategory = postObject?["category"]
-                    let postUserID = postObject?["userID"]
-                    let postID = postObject?["postID"]
-                    
-                    //creating post object with model and fetched values
-                    let post = Post(title: postTitle as! String, description: postDescription as! String, price: postPrice as! String, category: postCategory as! String, userID: postUserID as! String, id: postID as! String)
-                    
-                    //appending it to list
-                    self.postList.append(post)
-                }
-                
-                //reloading the tableview
-                self.tableView.reloadData()
-            }
-        })
-
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -67,24 +29,23 @@ class SubCategoryTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return postList.count
+        return 0
     }
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "subCatCell", for: indexPath)
-        
-        let currentPost = postList[indexPath.row]
-        cell.textLabel?.text = currentPost.postTitle
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
 
         return cell
     }
-    
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -130,12 +91,5 @@ class SubCategoryTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? PostViewController,
-            let selectedIndexPath = tableView.indexPathForSelectedRow {
-            destinationVC.post = postList[selectedIndexPath.row]
-        }
-    }
 
 }

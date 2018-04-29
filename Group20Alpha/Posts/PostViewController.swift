@@ -14,6 +14,17 @@ class PostViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var commentsLabel: UILabel!
+    
+    @IBOutlet weak var userInputComments: UITextView!
+    @IBAction func addCommentsButton(_ sender: UIButton) {
+        addComment()
+    }
+    
+    func addComment(){
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

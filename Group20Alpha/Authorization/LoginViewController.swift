@@ -46,7 +46,7 @@ class LoginViewController: UIViewController {
             if let err = error {
                 print(err.localizedDescription)
             } else {
-                print("User: \(user?.uid) signed in")   //Ignore this warning. Doesn't break anything being how it is.
+                print("User: \(user!.uid) signed in")   //can fix this error with ! bc we know the user is valid at this point
                 self.defaults.set(true, forKey: "UserIsLoggedIn")
                 // show main controller
                 

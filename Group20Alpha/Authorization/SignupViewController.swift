@@ -45,7 +45,6 @@ class SignupViewController: UIViewController {
     }
     */
     
-    //Does this not check if the passwords match each other? Should probably look into that
     @IBAction func createButtonPressed(_ sender: Any) {
         guard let email = emailField.text else { return }
         guard let password = passwordField.text else { return }
@@ -60,22 +59,32 @@ class SignupViewController: UIViewController {
             "numPosts": 0
         ]
         
-        //Creates a new user in the Firebase database
-        Auth.auth().createUserAndRetrieveData(withEmail: email, password: password) { (result, err) in
-            if let err = err {
-                print(err.localizedDescription)
-            } else {
-                print ("Made it to Firebase - kinda")
-                guard let uid = result?.user.uid else { return }
-                self.ref.child("users/\(uid)").setValue(userData)
-                self.defaults.set(false, forKey: "UserIsLoggedIn")
-                print("Successfully created a user:", uid)
-                self.dismiss(animated: true, completion: nil)   //Pops this view from the stack or something?
+        // Creates a new user in the Firebase database
+        // Check if passwords match and utexas email used
+        if passwordField.text == confirmField.text && (emailField.text?.hasSuffix("utexas.edu"))! {
+            Auth.auth().createUserAndRetrieveData(withEmail: email, password: password) { (result, err) in
+                if let err = err {
+                    print(err.localizedDescription)
+                } else {
+                    print ("Made it to Firebase - kinda")
+                    guard let uid = result?.user.uid else { return }
+                    self.ref.child("users/\(uid)").setValue(userData)
+                    self.defaults.set(false, forKey: "UserIsLoggedIn")
+                    print("Successfully created a user:", uid)
+                    //self.dismiss(animated: true, completion: nil)   //Pops this view from the stack or something? Completely defunct now that we have a nav controller
+                }
             }
         }
+        else{
+            print("Make sure that your passwords match, and that you're using a utexas.edu email address!") //To make sure nobody else gets confused like I was :)
+        }
     }
+        
+
+            
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)    //Could probably just nix this entire thing and make the cancel button redirect to the login view from the storyboard
     }
     
 }
+
