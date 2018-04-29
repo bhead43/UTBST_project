@@ -16,9 +16,14 @@ class ManagePostViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        titleLabel.text = currentPost!.postTitle
+        descriptLabel.text = currentPost!.postDescription
+        priceLabel.text = currentPost!.postPrice
+        
         // Do any additional setup after loading the view.
     }
 

@@ -327,18 +327,12 @@
                                 <color key="shadowColor" white="0.30686383928571431" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mm7-v7-wf7">
-                                <rect key="frame" x="279" y="501" width="80" height="30"/>
-                                <state key="normal" title="Contact OP"/>
+                                <rect key="frame" x="257" y="501" width="102" height="30"/>
+                                <state key="normal" title="Post Comment"/>
                                 <connections>
                                     <action selector="addCommentsButton:" destination="0HG-t5-34v" eventType="touchUpInside" id="kSE-lG-AJk"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="por-cX-D4e">
-                                <rect key="frame" x="145" y="540" width="84" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-LG-IWP" userLabel="Message">
                                 <rect key="frame" x="14" y="331" width="345" height="162"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -363,6 +357,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0et-sl-gbS">
+                                <rect key="frame" x="131" y="568" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Comments"/>
+                                <connections>
+                                    <segue destination="ygV-nS-7H1" kind="show" id="Rew-Em-2Xs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -374,14 +376,12 @@
                             <constraint firstItem="FQ0-Xw-5Dl" firstAttribute="leading" secondItem="Cri-sG-i3r" secondAttribute="leading" id="P72-JZ-YyJ"/>
                             <constraint firstItem="k1V-r2-2KF" firstAttribute="leading" secondItem="j6U-os-yrU" secondAttribute="leadingMargin" id="SL4-ck-T4j"/>
                             <constraint firstItem="FQ0-Xw-5Dl" firstAttribute="centerX" secondItem="j6U-os-yrU" secondAttribute="centerX" id="XFZ-wj-7ij"/>
-                            <constraint firstItem="por-cX-D4e" firstAttribute="top" secondItem="dvT-LG-IWP" secondAttribute="bottom" constant="47" id="ZJD-j1-pxm"/>
                             <constraint firstItem="mm7-v7-wf7" firstAttribute="trailing" secondItem="j6U-os-yrU" secondAttribute="trailingMargin" id="bFf-OD-q2g"/>
                             <constraint firstItem="FQ0-Xw-5Dl" firstAttribute="top" secondItem="5V6-Pj-GcU" secondAttribute="top" constant="17" id="bfK-hD-LkM"/>
                             <constraint firstItem="id8-81-kFD" firstAttribute="leading" secondItem="5V6-Pj-GcU" secondAttribute="leading" constant="158" id="e65-mu-gms"/>
                             <constraint firstItem="mm7-v7-wf7" firstAttribute="trailing" secondItem="dvT-LG-IWP" secondAttribute="trailing" id="f92-Ut-2pz"/>
                             <constraint firstItem="dvT-LG-IWP" firstAttribute="top" secondItem="k1V-r2-2KF" secondAttribute="bottom" constant="17" id="iIU-Kz-FML"/>
                             <constraint firstItem="id8-81-kFD" firstAttribute="top" secondItem="Cri-sG-i3r" secondAttribute="bottom" constant="33" id="iUX-lv-3Jj"/>
-                            <constraint firstItem="dvT-LG-IWP" firstAttribute="centerX" secondItem="por-cX-D4e" secondAttribute="centerX" id="m1j-ga-uiI"/>
                             <constraint firstItem="dvT-LG-IWP" firstAttribute="top" secondItem="j6U-os-yrU" secondAttribute="top" constant="331" id="qoc-o3-v8o"/>
                             <constraint firstItem="Cri-sG-i3r" firstAttribute="leading" secondItem="5V6-Pj-GcU" secondAttribute="leading" constant="15" id="sLm-yH-QT8"/>
                             <constraint firstItem="Cri-sG-i3r" firstAttribute="top" secondItem="j6U-os-yrU" secondAttribute="top" constant="151" id="xTl-aw-ryk"/>
@@ -390,7 +390,6 @@
                         <viewLayoutGuide key="safeArea" id="5V6-Pj-GcU"/>
                     </view>
                     <connections>
-                        <outlet property="commentsLabel" destination="por-cX-D4e" id="HKC-Pp-7iB"/>
                         <outlet property="descriptLabel" destination="Cri-sG-i3r" id="1WD-BB-Mth"/>
                         <outlet property="priceLabel" destination="id8-81-kFD" id="VeS-JM-DIM"/>
                         <outlet property="titleLabel" destination="FQ0-Xw-5Dl" id="4hE-lc-Tk5"/>
@@ -614,6 +613,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6HK-bL-Nbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2009" y="2533"/>
+        </scene>
+        <!--Comments Table View Controller-->
+        <scene sceneID="gQs-pB-ToR">
+            <objects>
+                <tableViewController id="ygV-nS-7H1" customClass="CommentsTableViewController" customModule="Group20Alpha" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jAj-v9-4Je">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="121" id="TJv-ZU-Xa3" customClass="CommentsTableViewCell" customModule="Group20Alpha" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="121"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TJv-ZU-Xa3" id="7iw-f3-CRw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0X-pD-sOo">
+                                            <rect key="frame" x="16" y="0.0" width="352" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentLabel" destination="a0X-pD-sOo" id="Zhi-KW-m84"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ygV-nS-7H1" id="m2x-lt-Cr5"/>
+                            <outlet property="delegate" destination="ygV-nS-7H1" id="8Yu-R6-XYC"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JkU-CR-bzh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3308" y="2561.4692653673164"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vvJ-Gj-F28">

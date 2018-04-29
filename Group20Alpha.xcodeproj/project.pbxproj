@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A3A9B5AB51C4516133E20AAC /* Pods_Group20Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8153EC90708D004D781800B3 /* Pods_Group20Alpha.framework */; };
-		BD7074132093053E00FC8B01 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7074122093053E00FC8B01 /* MessagesTableViewController.swift */; };
 		BDD1BE162073E281007F0A0C /* appUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE152073E281007F0A0C /* appUser.swift */; };
 		BDD1BE1A207445AC007F0A0C /* SafeAreaLayout_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE19207445AC007F0A0C /* SafeAreaLayout_Extension.swift */; };
 		BDD1BE1C207445DD007F0A0C /* UITextField_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE1B207445DD007F0A0C /* UITextField_Extension.swift */; };
@@ -30,6 +29,8 @@
 		FA1D551D209072160022AE4B /* DataLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D551C209072160022AE4B /* DataLists.swift */; };
 		FA30AEAB209576170045D9E9 /* ManagePostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30AEAA209576170045D9E9 /* ManagePostsTableViewController.swift */; };
 		FA30AEAD209634710045D9E9 /* ManagePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30AEAC209634710045D9E9 /* ManagePostViewController.swift */; };
+		FA30AEAF20964AA00045D9E9 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30AEAE20964AA00045D9E9 /* CommentsTableViewController.swift */; };
+		FA30AEB120964F7E0045D9E9 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30AEB020964F7E0045D9E9 /* CommentsTableViewCell.swift */; };
 		FA44B0DB2086B92A000A3903 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA44B0DA2086B92A000A3903 /* GoogleService-Info.plist */; };
 		FA8541D6208C228A00C6279C /* UILable_Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8541D5208C228A00C6279C /* UILable_Extenstion.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +38,6 @@
 /* Begin PBXFileReference section */
 		7914FC37E31BD24AF0C593FC /* Pods-Group20Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group20Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		8153EC90708D004D781800B3 /* Pods_Group20Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group20Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD7074122093053E00FC8B01 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		BDD1BE152073E281007F0A0C /* appUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appUser.swift; sourceTree = "<group>"; };
 		BDD1BE19207445AC007F0A0C /* SafeAreaLayout_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaLayout_Extension.swift; sourceTree = "<group>"; };
 		BDD1BE1B207445DD007F0A0C /* UITextField_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField_Extension.swift; sourceTree = "<group>"; };
@@ -62,6 +62,8 @@
 		FA1D551C209072160022AE4B /* DataLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLists.swift; sourceTree = "<group>"; };
 		FA30AEAA209576170045D9E9 /* ManagePostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostsTableViewController.swift; sourceTree = "<group>"; };
 		FA30AEAC209634710045D9E9 /* ManagePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostViewController.swift; sourceTree = "<group>"; };
+		FA30AEAE20964AA00045D9E9 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
+		FA30AEB020964F7E0045D9E9 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
 		FA44B0DA2086B92A000A3903 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA8541D5208C228A00C6279C /* UILable_Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILable_Extenstion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,7 +100,8 @@
 		BD7074112093051F00FC8B01 /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				BD7074122093053E00FC8B01 /* MessagesTableViewController.swift */,
+				FA30AEAE20964AA00045D9E9 /* CommentsTableViewController.swift */,
+				FA30AEB020964F7E0045D9E9 /* CommentsTableViewCell.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				FA1D551720904CA80022AE4B /* PostViewController.swift in Sources */,
 				BDD1BE1C207445DD007F0A0C /* UITextField_Extension.swift in Sources */,
 				FA30AEAD209634710045D9E9 /* ManagePostViewController.swift in Sources */,
+				FA30AEB120964F7E0045D9E9 /* CommentsTableViewCell.swift in Sources */,
 				FA1D551420904C170022AE4B /* SubCategoryTableViewController.swift in Sources */,
 				FA1D551B2090503B0022AE4B /* Post.swift in Sources */,
 				FA8541D6208C228A00C6279C /* UILable_Extenstion.swift in Sources */,
@@ -347,7 +351,7 @@
 				BDD1BE1A207445AC007F0A0C /* SafeAreaLayout_Extension.swift in Sources */,
 				E491C5822061D56F0008318F /* Group20Alpha.xcdatamodeld in Sources */,
 				BDD1BE162073E281007F0A0C /* appUser.swift in Sources */,
-				BD7074132093053E00FC8B01 /* MessagesTableViewController.swift in Sources */,
+				FA30AEAF20964AA00045D9E9 /* CommentsTableViewController.swift in Sources */,
 				FA30AEAB209576170045D9E9 /* ManagePostsTableViewController.swift in Sources */,
 				E491C57A2061D56F0008318F /* AppDelegate.swift in Sources */,
 				FA1D551D209072160022AE4B /* DataLists.swift in Sources */,
