@@ -30,8 +30,11 @@ class CommentsTableViewController: UITableViewController {
                 let postObject = snapshot.value as? [String: AnyObject]
                 let postComments = postObject?["comments"] as! [String]
                 
-                for x in 1...(postComments.count - 1){
-                    self.commentsList.append(postComments[x])
+                
+                if (postComments.count > 0) {
+                    for x in 1...(postComments.count - 1){
+                        self.commentsList.append(postComments[x])
+                    }
                 }
                 //iterating through all the values
 //                for comments in snapshot.children.allObjects as! [DataSnapshot] {

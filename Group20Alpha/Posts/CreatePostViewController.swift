@@ -84,15 +84,15 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         selectedCategory = categories[row] as String
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFit
-            imageView.image = pickedImage
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            imageView.contentMode = .scaleAspectFit
+//            imageView.image = pickedImage
+//        }
+//
+//        dismiss(animated: true, completion: nil)
+//    }
+//
 
     /*
     // MARK: - Navigation

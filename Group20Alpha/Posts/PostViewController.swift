@@ -18,6 +18,18 @@ class PostViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
+    @IBAction func showCommentsButtonClick(_ sender: Any) {
+        let alertController = UIAlertController(title: "Alert", message: "There are no comments for this post yet.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Close Alert", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        
+        if ((post?.postComments.count)! <= 1){
+            present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    
     @IBOutlet weak var userInputComments: UITextView!
     
     var comments: [String] = []
