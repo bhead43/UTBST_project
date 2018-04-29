@@ -50,7 +50,6 @@ class LoginViewController: UIViewController {
                 self.defaults.set(true, forKey: "UserIsLoggedIn")
                 // show main controller
                 
-                //Go on to next view (probably main categories screen)
                 //But for now, just test with this print thing:
                 print("Logged in succesfully! This stuff works so far!")  //Just realized that the above thing does this already, so this is pretty useless
                 //Can this do the present stuff still, now that there are storyboards in play? Can you just present the controller attached to the storyboard view you want?

@@ -63,9 +63,10 @@ class ManagePostsTableViewController: UITableViewController {
                                 let postCategory = postObject?["category"]
                                 let postUserID = postObject?["userID"]
                                 let postID = postObject?["postID"]
+                                let postComments = postObject?["comments"]
                                 
                                 //creating post object with model and fetched values
-                                let post = Post(title: postTitle as! String, description: postDescription as! String, price: postPrice as! String, category: postCategory as! String, userID: postUserID as! String, id: postID as! String)
+                                let post = Post(title: postTitle as! String, description: postDescription as! String, price: postPrice as! String, category: postCategory as! String, userID: postUserID as! String, id: postID as! String, comments: postComments as! [String])
                                 
                                 //appending it to list
                                 self.postList.append(post)
@@ -142,14 +143,16 @@ class ManagePostsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let destinationVC = segue.destination as? ManagePostViewController,
+            let selectedIndexPath = tableView.indexPathForSelectedRow {
+            destinationVC.currentPost = postList[selectedIndexPath.row]
+        }
     }
-    */
+    
 
 }

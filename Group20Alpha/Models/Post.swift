@@ -22,8 +22,9 @@ class Post: NSObject {
     public var postCategory: String //This should work? As long as the branches in the database have the same names as string, shit shouldn't implode here
     public var postUser: String? //I think I can use some Firebase magic to grab this really easily?
     public var postID: String   //Saving this to the posts as well now to facilitate accessing the real stuff in the database more easily
+    public var postComments: [String]
     
-    init(title: String, description: String, price: String, category: String, userID: String, id: String){
+    init(title: String, description: String, price: String, category: String, userID: String, id: String, comments: [String]){
         ref = Database.database().reference()
         
         postTitle = title
@@ -32,6 +33,7 @@ class Post: NSObject {
         postCategory = category
         postUser = userID
         postID = id
+        postComments = comments
         
         //Don't actually need to do this stuff here. No point in making a post just to unmake it immediately
 //        //And here's the fun part. Upon initialization, we add this post to the appropiate branch of the database based on its category. Fingers crossed!

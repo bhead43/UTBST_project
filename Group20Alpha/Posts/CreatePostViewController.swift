@@ -13,11 +13,14 @@ import Foundation
 class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var ref: DatabaseReference!
+    var picker = UIImagePickerController()
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptField: UITextView!
     @IBOutlet weak var priceField: UITextField!
     @IBOutlet weak var catPicker: UIPickerView!
+    @IBOutlet weak var selectButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     var selectedCategory: String = "Clothing"
     
@@ -44,6 +47,13 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func selectPicturePressed(_ sender: Any) {
+        picker.allowsEditing = true
+        picker.sourceType = .photoLibrary
+        
+        self.present(picker, animated: true, completion: nil)
     }
     
     //Pickerview Stuff!
@@ -86,6 +96,8 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         //Debug
         print(autoID)
         
+        let comments: [String] = ["Placeholder"]
+        
         //Put all of this stuff into a Firebase friendly thing
         let postData: [String: Any] = [
             "title": postTitle,
@@ -93,7 +105,9 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             "price": postPrice,
             "category": postCategory,
             "userID": Auth.auth().currentUser?.uid,
-            "postID": autoID    //Probably wouldn't hurt to save this as a part of the post as well. Will almost certainly make life better in the future.
+            "postID": autoID,    //Probably wouldn't hurt to save this as a part of the post as well. Will almost certainly make life better in the future.
+            "comments": comments
+            
         ]
         //Push to the database
         //let autoID = String((Date().timeIntervalSince1970 * 1000.0).rounded())
