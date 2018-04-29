@@ -103,13 +103,20 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
                         let userDict = snapshot.value as! [String: Any]
         
                         var totalPosts = userDict["numPosts"] as! Int
-//                        var displayName = userDict["name"] as! String
-//                        var postList = userDict["posts"] as! [String]
+                        var displayName = userDict["name"] as! String
+                        var postList = userDict["posts"] as! [String]
                         totalPosts += 1
+                        postList.append(autoID)
                         
-                        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["numPosts": totalPosts])
+                        let userData: [String: Any] = [
+                            "name": displayName,
+                            "posts": postList,
+                            "numPosts": totalPosts
+                        ]   //Recreates the user from scratch with all it's all stuff, should fix things. At the very least, will avoid deleting all of it's info upon adding a post
                         
-                        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).child("posts").setValue([String(totalPosts): autoID])
+                        //self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["numPosts": totalPosts])
+                        
+                        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Recreate the user with new info!
         
                     })
         //self.ref.child((Auth.auth().currentUser?.uid)!).child("posts").setValue([String])

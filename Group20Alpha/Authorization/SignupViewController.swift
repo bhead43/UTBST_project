@@ -71,9 +71,12 @@ class SignupViewController: UIViewController {
                     self.ref.child("users/\(uid)").setValue(userData)
                     self.defaults.set(false, forKey: "UserIsLoggedIn")
                     print("Successfully created a user:", uid)
-                    self.dismiss(animated: true, completion: nil)   //Pops this view from the stack or something?
+                    //self.dismiss(animated: true, completion: nil)   //Pops this view from the stack or something? Completely defunct now that we have a nav controller
                 }
             }
+        }
+        else{
+            print("Make sure that your passwords match, and that you're using a utexas.edu email address!") //To make sure nobody else gets confused like I was :)
         }
     }
         
