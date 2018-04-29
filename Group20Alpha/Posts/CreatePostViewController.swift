@@ -86,6 +86,8 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         //Debug
         print(autoID)
         
+        let comments: [String] = ["Placeholder"]
+        
         //Put all of this stuff into a Firebase friendly thing
         let postData: [String: Any] = [
             "title": postTitle,
@@ -93,7 +95,9 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
             "price": postPrice,
             "category": postCategory,
             "userID": Auth.auth().currentUser?.uid,
-            "postID": autoID    //Probably wouldn't hurt to save this as a part of the post as well. Will almost certainly make life better in the future.
+            "postID": autoID,    //Probably wouldn't hurt to save this as a part of the post as well. Will almost certainly make life better in the future.
+            "comments": comments
+            
         ]
         //Push to the database
         //let autoID = String((Date().timeIntervalSince1970 * 1000.0).rounded())
