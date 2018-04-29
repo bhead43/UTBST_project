@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A3A9B5AB51C4516133E20AAC /* Pods_Group20Alpha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8153EC90708D004D781800B3 /* Pods_Group20Alpha.framework */; };
+		BD7074132093053E00FC8B01 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7074122093053E00FC8B01 /* MessagesTableViewController.swift */; };
 		BDD1BE162073E281007F0A0C /* appUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE152073E281007F0A0C /* appUser.swift */; };
 		BDD1BE1A207445AC007F0A0C /* SafeAreaLayout_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE19207445AC007F0A0C /* SafeAreaLayout_Extension.swift */; };
 		BDD1BE1C207445DD007F0A0C /* UITextField_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE1B207445DD007F0A0C /* UITextField_Extension.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		7914FC37E31BD24AF0C593FC /* Pods-Group20Alpha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group20Alpha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha.debug.xcconfig"; sourceTree = "<group>"; };
 		8153EC90708D004D781800B3 /* Pods_Group20Alpha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group20Alpha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD7074122093053E00FC8B01 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		BDD1BE152073E281007F0A0C /* appUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appUser.swift; sourceTree = "<group>"; };
 		BDD1BE19207445AC007F0A0C /* SafeAreaLayout_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeAreaLayout_Extension.swift; sourceTree = "<group>"; };
 		BDD1BE1B207445DD007F0A0C /* UITextField_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField_Extension.swift; sourceTree = "<group>"; };
@@ -87,6 +89,14 @@
 				D5E090776B1EABA1D97CFF5C /* Pods-Group20Alpha.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD7074112093051F00FC8B01 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				BD7074122093053E00FC8B01 /* MessagesTableViewController.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 		BDD1BE142073E257007F0A0C /* Models */ = {
@@ -162,6 +172,7 @@
 		E491C5782061D56F0008318F /* Group20Alpha */ = {
 			isa = PBXGroup;
 			children = (
+				BD7074112093051F00FC8B01 /* Messages */,
 				FA1D551520904C900022AE4B /* Posts */,
 				FA8541CE208C1C9000C6279C /* Categories */,
 				E43BD34E2073CAB50023BF34 /* Supporting Files */,
@@ -204,7 +215,6 @@
 				E491C5732061D56F0008318F /* Frameworks */,
 				E491C5742061D56F0008318F /* Resources */,
 				50ED3F4562DA026D7BE615E2 /* [CP] Embed Pods Frameworks */,
-				2004243FC3BEABA39C862C52 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,28 +274,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2004243FC3BEABA39C862C52 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha-resources.sh",
-				"${PODS_ROOT}/FirebaseInvites/Resources/GINInviteResources.bundle",
-				"${PODS_ROOT}/FirebaseInvites/Resources/GPPACLPickerResources.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GINInviteResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GPPACLPickerResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		49D6AF7D2296BBB8EF0CB3F5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -313,6 +301,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -320,6 +310,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -348,6 +340,7 @@
 				BDD1BE1A207445AC007F0A0C /* SafeAreaLayout_Extension.swift in Sources */,
 				E491C5822061D56F0008318F /* Group20Alpha.xcdatamodeld in Sources */,
 				BDD1BE162073E281007F0A0C /* appUser.swift in Sources */,
+				BD7074132093053E00FC8B01 /* MessagesTableViewController.swift in Sources */,
 				E491C57A2061D56F0008318F /* AppDelegate.swift in Sources */,
 				FA1D551D209072160022AE4B /* DataLists.swift in Sources */,
 				FA1D550E208FFC150022AE4B /* SignupViewController.swift in Sources */,
