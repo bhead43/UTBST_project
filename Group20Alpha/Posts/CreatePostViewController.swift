@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Foundation
 
-class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var ref: DatabaseReference!
     var picker = UIImagePickerController()
@@ -33,7 +33,7 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         //Do stuff for the PickerView (that's a god-awful name, just by the by)
         self.catPicker.delegate = self
         self.catPicker.dataSource = self
-        
+            picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         //Populate the picker stuff
         categories = ["Clothing",
                       "Home",
@@ -50,7 +50,7 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @IBAction func selectPicturePressed(_ sender: Any) {
-        picker.allowsEditing = true
+        picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         
         self.present(picker, animated: true, completion: nil)
@@ -72,6 +72,15 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     //Grabs the selected value (I think?)
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent  component: Int) {
         selectedCategory = categories[row] as String
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = pickedImage
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
     
 
