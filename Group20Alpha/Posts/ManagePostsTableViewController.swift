@@ -8,6 +8,8 @@
 
 //Fun fact: The "observeSingleEvent" type things (snapshot nonsense) runs after EVERYTHING else in its respective block, even if there's code that comes after it. Only took a few hours of frustration to figure that one out.
 
+//created carolinemiller@utexas and samgonzales@utexas so far
+
 import UIKit
 import Foundation
 import Firebase
