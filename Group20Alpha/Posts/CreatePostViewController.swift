@@ -22,6 +22,7 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
+    
     var selectedCategory: String = "Clothing"
     
     var categories: [String] = []
