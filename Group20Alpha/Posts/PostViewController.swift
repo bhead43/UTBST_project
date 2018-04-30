@@ -23,6 +23,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
+    @IBOutlet weak var commentsTextView: UITextView!
     @IBAction func showCommentsButtonClick(_ sender: Any) {
         
         
@@ -76,6 +77,7 @@ class PostViewController: UIViewController {
                 let comment: String = "\(userName ?? ""): \(self.userInputComments.text!)"
                 postComments.append(comment)
                 
+                
                 let postData: [String: Any] = [
                     "title": postTitle!,
                     "description": postDescription!,
@@ -88,8 +90,20 @@ class PostViewController: UIViewController {
                 self.ref.setValue(postData)
             })
         })
+        let alertController = UIAlertController(title: "Comment Recorded", message: "Your comment has been recorded.", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func clearCommentAction(_ sender: Any) {
+        clearCommentSection()
+    }
+    
+    func clearCommentSection() {
+        commentsTextView.text = ""
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

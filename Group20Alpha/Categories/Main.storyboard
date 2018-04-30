@@ -323,7 +323,7 @@
                                     <action selector="addCommentsButton:" destination="0HG-t5-34v" eventType="touchUpInside" id="kSE-lG-AJk"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-LG-IWP" userLabel="Message">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-LG-IWP" userLabel="Comment">
                                 <rect key="frame" x="14" y="331" width="345" height="162"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -355,6 +355,14 @@
                                     <segue destination="ygV-nS-7H1" kind="show" id="Rew-Em-2Xs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZy-e5-LN9">
+                                <rect key="frame" x="14" y="501" width="107" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Clear Comment"/>
+                                <connections>
+                                    <action selector="clearCommentAction:" destination="0HG-t5-34v" eventType="touchUpInside" id="jKW-hK-6bR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -380,6 +388,7 @@
                         <viewLayoutGuide key="safeArea" id="5V6-Pj-GcU"/>
                     </view>
                     <connections>
+                        <outlet property="commentsTextView" destination="dvT-LG-IWP" id="Gf5-Pf-BBb"/>
                         <outlet property="descriptLabel" destination="Cri-sG-i3r" id="1WD-BB-Mth"/>
                         <outlet property="priceLabel" destination="id8-81-kFD" id="VeS-JM-DIM"/>
                         <outlet property="titleLabel" destination="FQ0-Xw-5Dl" id="4hE-lc-Tk5"/>
