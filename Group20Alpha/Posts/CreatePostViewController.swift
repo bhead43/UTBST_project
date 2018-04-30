@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Foundation
 
-class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var ref: DatabaseReference!
     var picker = UIImagePickerController()
@@ -33,7 +33,7 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         //Do stuff for the PickerView (that's a god-awful name, just by the by)
         self.catPicker.delegate = self
         self.catPicker.dataSource = self
-        
+            picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         //Populate the picker stuff
         categories = ["Clothing",
                       "Home",
@@ -60,7 +60,7 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
     }
     
     @IBAction func selectPicturePressed(_ sender: Any) {
-        picker.allowsEditing = true
+        picker.allowsEditing = false
         picker.sourceType = .photoLibrary
         
         self.present(picker, animated: true, completion: nil)
@@ -84,6 +84,15 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
         selectedCategory = categories[row] as String
     }
     
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+//            imageView.contentMode = .scaleAspectFit
+//            imageView.image = pickedImage
+//        }
+//
+//        dismiss(animated: true, completion: nil)
+//    }
+//
 
     /*
     // MARK: - Navigation
@@ -128,12 +137,16 @@ class CreatePostViewController: UIViewController, UIPickerViewDelegate, UIPicker
                     .observeSingleEvent(of: .value, with: { (snapshot) in
         
                         let userDict = snapshot.value as! [String: Any]
+                        print ("this is old user dict asgiment")
+                        print (userDict)
         
                         var totalPosts = userDict["numPosts"] as! Int
                         var displayName = userDict["name"] as! String
                         var postList = userDict["posts"] as! [String]
                         totalPosts += 1
                         postList.append(autoID)
+                        print ("this is new user dict asgiment")
+                        print (userDict)
                         
                         let userData: [String: Any] = [
                             "name": displayName,

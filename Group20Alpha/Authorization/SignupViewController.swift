@@ -78,6 +78,17 @@ class SignupViewController: UIViewController {
         else{
             print("Make sure that your passwords match, and that you're using a utexas.edu email address!") //To make sure nobody else gets confused like I was :)
         }
+        
+        let alertController = UIAlertController(title: "Congratulations", message: "You are now registered for UTBST!", preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        
+        present(alertController, animated: true, completion: nil)
+        emailField.text = ""
+        passwordField.text = ""
+        nameField.text = ""
+        confirmField.text = ""
+        
     }
         
 
