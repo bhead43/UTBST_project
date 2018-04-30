@@ -351,6 +351,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View Comments"/>
                                 <connections>
+                                    <action selector="showCommentsButtonClick:" destination="0HG-t5-34v" eventType="touchUpInside" id="tdl-F8-xCd"/>
                                     <segue destination="ygV-nS-7H1" kind="show" id="Rew-Em-2Xs"/>
                                 </connections>
                             </button>

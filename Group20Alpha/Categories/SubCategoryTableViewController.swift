@@ -44,6 +44,7 @@ class SubCategoryTableViewController: UITableViewController {
                     
                     //appending it to list
                     self.postList.append(post)
+                    print(post)
                 }
                 
                 //reloading the tableview
@@ -135,6 +136,7 @@ class SubCategoryTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? PostViewController,
             let selectedIndexPath = tableView.indexPathForSelectedRow {
+            //pases data in 'postList' variable (the selected category) from whichever row was clicked (i.e. "Electronics")
             destinationVC.post = postList[selectedIndexPath.row]
         }
     }
