@@ -9,13 +9,18 @@
 import Foundation
 import UIKit
 
-class landingScreenViewController: UITableViewController {
+class landingScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
         
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func logoutPressed(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
