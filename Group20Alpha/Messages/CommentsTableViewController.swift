@@ -12,25 +12,36 @@ import Firebase
 class CommentsTableViewController: UITableViewController {
 
     var ref: DatabaseReference!
+    
+    //receives the data from Post variable from SubCategory table with values for
+    //title, description, price, category, userID & comments as strings
+    //values for each have been changing based on where the user has selected
     var currentPost: Post?
+    
+    //generate the list of comments to be displayed for this currentPost
     var commentsList: [String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //reference the data by the parameters of the currently navigated path
         ref = Database.database().reference().child(currentPost!.postCategory).child(currentPost!.postID)
         
+        //capture these values in a snapshot
         ref.observe(DataEventType.value, with: { (snapshot) in
             
-            //if the reference have some values
+            //if the snapshot isn't empty
             if snapshot.childrenCount > 0 {
                 
-                //clearing the list
+                //move forward, clearing previously displayed comments list
                 self.commentsList.removeAll()
                 
+                // post data in (string, any) form
                 let postObject = snapshot.value as? [String: AnyObject]
+                // post to comments in an array of strings
                 let postComments = postObject?["comments"] as! [String]
                 
-                
+                //creates error when there are no existing comments
                 if (postComments.count > 0) {
                     for x in 1...(postComments.count - 1){
                         self.commentsList.append(postComments[x])

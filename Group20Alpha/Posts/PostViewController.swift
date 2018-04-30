@@ -12,21 +12,36 @@ import Firebase
 class PostViewController: UIViewController {
 
     var ref: DatabaseReference!
+    
+    //receives the data from Post variable from SubCategory table with values for
+    //title, description, price, category, userID & comments as strings
     var post: Post?
+    
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
     @IBAction func showCommentsButtonClick(_ sender: Any) {
-        let alertController = UIAlertController(title: "Alert", message: "There are no comments for this post yet.", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "Close Alert", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
         
+        
+        
+        if post?.postComments.count == 0 {
+            let alertController = UIAlertController(title: "Alert", message: "There are no comments for this post yet.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Close Alert", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
+            return
         
         if ((post?.postComments.count)! <= 1){
+             let alertController = UIAlertController(title: "Alert", message: "There are still no comments for this post yet.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Close Alert", style: .default, handler: nil)
             present(alertController, animated: true, completion: nil)
+            return
         }
+    }
+        
     }
     
     

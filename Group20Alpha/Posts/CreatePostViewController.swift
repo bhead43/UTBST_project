@@ -137,12 +137,16 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
                     .observeSingleEvent(of: .value, with: { (snapshot) in
         
                         let userDict = snapshot.value as! [String: Any]
+                        print ("this is old user dict asgiment")
+                        print (userDict)
         
                         var totalPosts = userDict["numPosts"] as! Int
                         var displayName = userDict["name"] as! String
                         var postList = userDict["posts"] as! [String]
                         totalPosts += 1
                         postList.append(autoID)
+                        print ("this is new user dict asgiment")
+                        print (userDict)
                         
                         let userData: [String: Any] = [
                             "name": displayName,
