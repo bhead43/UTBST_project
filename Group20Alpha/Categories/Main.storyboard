@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cE0-w4-R1Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cE0-w4-R1Q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -712,9 +712,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxs-Eu-5wN">
-                                <rect key="frame" x="0.0" y="164" width="375" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxs-Eu-5wN">
+                                <rect key="frame" x="0.0" y="175" width="375" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Go to Categories">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -723,9 +722,8 @@
                                     <segue destination="wwq-i1-VWP" kind="show" id="vdD-0L-oMl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpc-72-2cK">
-                                <rect key="frame" x="0.0" y="348" width="375" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fpc-72-2cK">
+                                <rect key="frame" x="0.0" y="341" width="375" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Manage Posts">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -734,9 +732,8 @@
                                     <segue destination="Dbn-sX-sBf" kind="show" id="ZOb-jS-Q3n"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh2-Tc-GHn">
-                                <rect key="frame" x="0.0" y="477" width="375" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh2-Tc-GHn">
+                                <rect key="frame" x="0.0" y="424" width="375" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="About UTBST">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -745,9 +742,8 @@
                                     <segue destination="GVA-3U-eR8" kind="show" id="NO2-Qv-jTX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8o-wB-qFQ">
-                                <rect key="frame" x="0.0" y="253" width="375" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8o-wB-qFQ">
+                                <rect key="frame" x="0.0" y="258" width="375" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Create a Post">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -756,10 +752,40 @@
                                     <segue destination="bVh-hU-vlF" kind="show" id="SDq-0P-4yS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="veV-cW-daQ">
+                                <rect key="frame" x="0.0" y="45" width="375" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutPressed:" destination="06I-zR-R1Y" eventType="touchUpInside" id="H4c-gk-c8X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hh2-Tc-GHn" firstAttribute="top" secondItem="Fpc-72-2cK" secondAttribute="bottom" constant="35" id="5Ab-Tf-kbQ"/>
+                            <constraint firstItem="M8o-wB-qFQ" firstAttribute="leading" secondItem="rbX-V8-E9A" secondAttribute="leading" id="6pA-Hl-Muv"/>
+                            <constraint firstItem="veV-cW-daQ" firstAttribute="leading" secondItem="rbX-V8-E9A" secondAttribute="leading" id="6rQ-23-nQU"/>
+                            <constraint firstItem="rbX-V8-E9A" firstAttribute="trailing" secondItem="veV-cW-daQ" secondAttribute="trailing" id="EWn-jW-Yyy"/>
+                            <constraint firstItem="Zxs-Eu-5wN" firstAttribute="trailing" secondItem="rbX-V8-E9A" secondAttribute="trailing" id="F7H-kR-Maw"/>
+                            <constraint firstItem="veV-cW-daQ" firstAttribute="top" secondItem="rbX-V8-E9A" secondAttribute="top" constant="25" id="HhL-WK-Asd"/>
+                            <constraint firstItem="hh2-Tc-GHn" firstAttribute="top" secondItem="Fpc-72-2cK" secondAttribute="bottom" constant="35" id="J2h-s6-bhX"/>
+                            <constraint firstItem="Zxs-Eu-5wN" firstAttribute="top" secondItem="veV-cW-daQ" secondAttribute="bottom" constant="100" id="LbA-GL-9yC"/>
+                            <constraint firstItem="M8o-wB-qFQ" firstAttribute="top" secondItem="Zxs-Eu-5wN" secondAttribute="bottom" constant="35" id="N7f-Dw-kSH"/>
+                            <constraint firstItem="hh2-Tc-GHn" firstAttribute="leading" secondItem="rbX-V8-E9A" secondAttribute="leading" id="Sjk-Az-glU"/>
+                            <constraint firstItem="Fpc-72-2cK" firstAttribute="top" secondItem="M8o-wB-qFQ" secondAttribute="bottom" constant="35" id="V6J-z0-KSb"/>
+                            <constraint firstItem="Zxs-Eu-5wN" firstAttribute="leading" secondItem="rbX-V8-E9A" secondAttribute="leading" id="XrR-bu-Fym"/>
+                            <constraint firstItem="Zxs-Eu-5wN" firstAttribute="top" secondItem="veV-cW-daQ" secondAttribute="bottom" constant="100" id="kf9-ss-7ax"/>
+                            <constraint firstItem="Fpc-72-2cK" firstAttribute="trailing" secondItem="rbX-V8-E9A" secondAttribute="trailing" id="nDE-Ba-8br"/>
+                            <constraint firstItem="M8o-wB-qFQ" firstAttribute="trailing" secondItem="rbX-V8-E9A" secondAttribute="trailing" id="oaY-Me-nrV"/>
+                            <constraint firstItem="M8o-wB-qFQ" firstAttribute="top" secondItem="Zxs-Eu-5wN" secondAttribute="bottom" constant="35" id="ozX-D2-xte"/>
+                            <constraint firstItem="hh2-Tc-GHn" firstAttribute="trailing" secondItem="rbX-V8-E9A" secondAttribute="trailing" id="pJ6-qa-qkJ"/>
+                            <constraint firstItem="Fpc-72-2cK" firstAttribute="leading" secondItem="rbX-V8-E9A" secondAttribute="leading" id="xRb-Zm-uFb"/>
+                            <constraint firstItem="Fpc-72-2cK" firstAttribute="top" secondItem="M8o-wB-qFQ" secondAttribute="bottom" constant="35" id="zfK-G4-MUy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rbX-V8-E9A"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CBK-14-dqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
