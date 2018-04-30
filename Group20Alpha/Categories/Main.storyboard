@@ -5,8 +5,8 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
+//This is a head line
+//This is a head line
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
 =======
 =======
@@ -332,13 +332,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-<<<<<<< HEAD
+//This is a head line
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
 =======
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="DiY-nP-vlB"/>
                                 </constraints>
-<<<<<<< HEAD
+//This is a head line
 >>>>>>> 9dac7ab0bd149020fbedb0ad7cf9b064d3a3c588
 =======
 >>>>>>> 9dac7ab0bd149020fbedb0ad7cf9b064d3a3c588

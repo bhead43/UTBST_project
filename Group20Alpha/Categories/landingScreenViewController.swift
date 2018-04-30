@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class landingScreenViewController: UITableViewController {
+class landingScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)

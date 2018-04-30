@@ -42,7 +42,7 @@ class CommentsTableViewController: UITableViewController {
                 let postComments = postObject?["comments"] as! [String]
                 
                 //creates error when there are no existing comments
-                if (postComments.count > 0) {
+                if (postComments.count > 1) {
                     for x in 1...(postComments.count - 1){
                         self.commentsList.append(postComments[x])
                     }
