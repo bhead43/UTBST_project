@@ -6,8 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
 =======
+=======
+>>>>>>> 9dac7ab0bd149020fbedb0ad7cf9b064d3a3c588
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
 >>>>>>> 9dac7ab0bd149020fbedb0ad7cf9b064d3a3c588
@@ -335,6 +338,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="DiY-nP-vlB"/>
                                 </constraints>
+<<<<<<< HEAD
+>>>>>>> 9dac7ab0bd149020fbedb0ad7cf9b064d3a3c588
+=======
 >>>>>>> 9dac7ab0bd149020fbedb0ad7cf9b064d3a3c588
                                 <color key="textColor" white="0.0" alpha="0.34328235029999998" colorSpace="deviceWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
