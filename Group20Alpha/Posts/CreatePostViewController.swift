@@ -156,8 +156,20 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
                         ]   //This creates a data set with everything the user needs.
                         
                         self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Updates the user with ALL of its info, even the sutff that didn't get touched (display name, previous posts)
+                        
+                        
+                            let alertController = UIAlertController(title: "Comment Recorded", message: "Your comment has been recorded!", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alertController.addAction(defaultAction)
+                        
+                            self.present(alertController, animated: true, completion: nil)
+                        
+                        self.titleField.text = ""
+                        self.descriptField.text = ""
+                        self.priceField.text = ""
         
                     })
+        
         
         //And head back to the last visited page (should be the beautiful landing page right now)
         //self.dismiss(animated: true, completion: nil)   //Does having a navigation controller completely negate this? That's unfortunate :(
