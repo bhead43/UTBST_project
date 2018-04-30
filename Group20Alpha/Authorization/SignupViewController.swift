@@ -72,22 +72,30 @@ class SignupViewController: UIViewController {
                     self.defaults.set(false, forKey: "UserIsLoggedIn")
                     print("Successfully created a user:", uid)
                     //self.dismiss(animated: true, completion: nil)   //Pops this view from the stack or something? Completely defunct now that we have a nav controller
+                    
+                    //allert to tell user they've been created
+                    let alertController = UIAlertController(title: "Congratulations", message: "You are now registered for UTBST!", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
                 }
             }
         }
         else{
             print("Make sure that your passwords match, and that you're using a utexas.edu email address!") //To make sure nobody else gets confused like I was :)
+            let alertController = UIAlertController(title: "Warning", message: "Make sure that your passwords match, and that you're using a utexas.edu email address!", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
         }
-        
-        let alertController = UIAlertController(title: "Congratulations", message: "You are now registered for UTBST!", preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(defaultAction)
-        
-        present(alertController, animated: true, completion: nil)
         emailField.text = ""
         passwordField.text = ""
         nameField.text = ""
         confirmField.text = ""
+       
         
     }
         
