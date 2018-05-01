@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Copperplate.ttc">
+            <string>Copperplate</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,26 +23,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="Hm6-mI-2q5">
-                                <rect key="frame" x="27" y="150" width="321" height="317"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UTBST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6M-bf-kGL">
-                                <rect key="frame" x="100" y="290" width="175" height="77"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UTBST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6M-bf-kGL">
+                                <rect key="frame" x="0.0" y="290" width="375" height="77"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="52"/>
                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="Hm6-mI-2q5">
+                                <rect key="frame" x="0.0" y="171" width="375" height="325"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="325" id="Uth-GZ-bLf"/>
+                                    <constraint firstAttribute="width" constant="375" id="fYH-N5-Sy0"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.11886216434068604" green="0.33510014101587099" blue="0.61545384837891248" alpha="0.69006359432278597" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C6M-bf-kGL" secondAttribute="trailing" constant="100" id="8jf-cy-lhG"/>
-                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="BPh-cw-e9L"/>
-                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="27" id="HMU-cD-fcl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hm6-mI-2q5" secondAttribute="trailing" constant="27" id="KHE-Da-oAr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C6M-bf-kGL" secondAttribute="bottom" constant="300" id="PfC-48-WPc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Hm6-mI-2q5" secondAttribute="bottom" constant="200" id="a6w-NT-A7C"/>
-                            <constraint firstItem="C6M-bf-kGL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="gnr-t6-nPP"/>
-                            <constraint firstItem="C6M-bf-kGL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="hD0-8n-9Fb"/>
+                            <constraint firstItem="C6M-bf-kGL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="2wo-bn-JeX"/>
+                            <constraint firstItem="C6M-bf-kGL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5xC-r4-HH4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C6M-bf-kGL" secondAttribute="trailing" id="8xq-sg-qXL"/>
+                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eP7-9y-Pz1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C6M-bf-kGL" secondAttribute="bottom" constant="300" id="rHb-n0-ls5"/>
+                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vrV-AN-h4w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
