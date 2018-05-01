@@ -23,7 +23,13 @@ class PostViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
-
+<<<<<<< HEAD
+    @IBOutlet weak var fireImage: UIImageView!
+=======
+    //@IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+>>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
+    
     @IBOutlet weak var commentsTextView: UITextView!
     
     
@@ -127,6 +133,29 @@ class PostViewController: UIViewController {
         titleLabel.text = post!.postTitle
         descriptLabel.text = post!.postDescription
         priceLabel.text = post!.postPrice
+        
+<<<<<<< HEAD
+        downloadPhoto()
+        
+        func downloadPhoto () {
+            dbRef?
+                .child("photos")
+                .queryOrdered(byChild: "name")
+                .queryEqual(toValue: fireTitle.text)
+                .observe(.value,
+                         with: {
+                            snapshot in
+                            // Swift typing is tough.  Array hack is unholy
+                            // Better is the code in downloadAllPhotos
+                            let outerDict = snapshot.value as? [String:AnyObject]
+                            let photo = PhotoObject(Array(outerDict!)[0].value as! Dictionary<String, Any>)
+                            //print("XXX \(photo.name)")
+                            self.fireImage.image = photo.image
+                })
+        }
+=======
+        imageView.image = post!.postImage
+>>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
 
         // Do any additional setup after loading the view.
     }

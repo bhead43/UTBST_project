@@ -38,9 +38,15 @@ class SubCategoryTableViewController: UITableViewController {
                     let postUserID = postObject?["userID"]
                     let postID = postObject?["postID"]
                     let postComments = postObject?["comments"]
+                    //Image stuff
+                    let postImageEncoded = postObject?["imageEncoded"] as! String
+                    let postImageData =  Data(base64Encoded: postImageEncoded as String, options: NSData.Base64DecodingOptions())
+                    
+                    //Recreate the image
+                    let postImage = UIImage(data: postImageData! ,scale: 1.0)
                     
                     //creating post object with model and fetched values
-                    let post = Post(title: postTitle as! String, description: postDescription as! String, price: postPrice as! String, category: postCategory as! String, userID: postUserID as! String, id: postID as! String, comments: postComments as! [String])
+                    let post = Post(title: postTitle as! String, description: postDescription as! String, price: postPrice as! String, category: postCategory as! String, userID: postUserID as! String, id: postID as! String, comments: postComments as! [String], image: postImage!)
                     
                     //appending it to list
                     self.postList.append(post)

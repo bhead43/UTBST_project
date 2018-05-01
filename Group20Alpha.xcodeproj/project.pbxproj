@@ -15,6 +15,7 @@
 		BDD1BE1E207445F4007F0A0C /* UIStackView_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE1D207445F4007F0A0C /* UIStackView_Extension.swift */; };
 		BDD1BE2020744616007F0A0C /* UIButton_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE1F20744616007F0A0C /* UIButton_Extension.swift */; };
 		BDD1BE2220744639007F0A0C /* UIColor_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD1BE2120744639007F0A0C /* UIColor_Extension.swift */; };
+		E4604D68209824BB00A8B4B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4604D67209824BB00A8B4B4 /* Main.storyboard */; };
 		E491C57A2061D56F0008318F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E491C5792061D56F0008318F /* AppDelegate.swift */; };
 		E491C5822061D56F0008318F /* Group20Alpha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E491C5802061D56F0008318F /* Group20Alpha.xcdatamodeld */; };
 		E491C5842061D56F0008318F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E491C5832061D56F0008318F /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		BDD1BE1F20744616007F0A0C /* UIButton_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_Extension.swift; sourceTree = "<group>"; };
 		BDD1BE2120744639007F0A0C /* UIColor_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Extension.swift; sourceTree = "<group>"; };
 		D5E090776B1EABA1D97CFF5C /* Pods-Group20Alpha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group20Alpha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Group20Alpha/Pods-Group20Alpha.release.xcconfig"; sourceTree = "<group>"; };
+		E4604D67209824BB00A8B4B4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
 		E491C5762061D56F0008318F /* Group20Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Group20Alpha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E491C5792061D56F0008318F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E491C5812061D56F0008318F /* Group20Alpha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Group20Alpha.xcdatamodel; sourceTree = "<group>"; };
@@ -207,7 +209,11 @@
 		FA8541CE208C1C9000C6279C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BD18089220982188008F1706 /* Main.storyboard */,
+=======
+				E4604D67209824BB00A8B4B4 /* Main.storyboard */,
+>>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
 				E4FBBB4920965970001FF74E /* landingScreenViewController.swift */,
 				FA1D5511209047520022AE4B /* MainCategoriesTableViewController.swift */,
 				FA1D551320904C170022AE4B /* SubCategoryTableViewController.swift */,
@@ -277,6 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E491C5872061D56F0008318F /* LaunchScreen.storyboard in Resources */,
+<<<<<<< HEAD
+=======
+				E4604D68209824BB00A8B4B4 /* Main.storyboard in Resources */,
+>>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
 				FA44B0DB2086B92A000A3903 /* GoogleService-Info.plist in Resources */,
 				E491C5842061D56F0008318F /* Assets.xcassets in Resources */,
 				BD18089320982188008F1706 /* Main.storyboard in Resources */,
