@@ -65,6 +65,12 @@ class SignupViewController: UIViewController {
             Auth.auth().createUserAndRetrieveData(withEmail: email, password: password) { (result, err) in
                 if let err = err {
                     print(err.localizedDescription)
+                    let alertController = UIAlertController(title: "Warning", message: "This account is already in use, please user a different e-mail", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
                 } else {
                     print ("Made it to Firebase - kinda")
                     guard let uid = result?.user.uid else { return }

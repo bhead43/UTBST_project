@@ -10,10 +10,9 @@ import UIKit
 import Firebase
 import Foundation
 
-class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreatePostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var ref: DatabaseReference!
-    var picker = UIImagePickerController()
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptField: UITextView!
@@ -29,12 +28,13 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectButton.isHidden = false
+        
         ref = Database.database().reference()
         
         //Do stuff for the PickerView (that's a god-awful name, just by the by)
         self.catPicker.delegate = self
         self.catPicker.dataSource = self
-            picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         //Populate the picker stuff
         categories = ["Clothing",
                       "Home",
@@ -45,15 +45,6 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         // Do any additional setup after loading the view.
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.imageView.image = image
-            selectButton.isHidden = true
-        }
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -61,10 +52,30 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func selectPicturePressed(_ sender: Any) {
-        picker.allowsEditing = false
-        picker.sourceType = .photoLibrary
+        let image = UIImagePickerController()
+        image.delegate = self
         
-        self.present(picker, animated: true, completion: nil)
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        image.allowsEditing = false
+        
+        self.present(image, animated: true)
+        
+    }
+    
+    // I hate Xcode
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView.image = image
+        } else {
+            // error message
+        }
+        selectButton.isHidden = true
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     //Pickerview Stuff!
@@ -156,8 +167,20 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
                         ]   //This creates a data set with everything the user needs.
                         
                         self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Updates the user with ALL of its info, even the sutff that didn't get touched (display name, previous posts)
+                        
+                        
+                            let alertController = UIAlertController(title: "Comment Recorded", message: "Your comment has been recorded!", preferredStyle: .alert)
+                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alertController.addAction(defaultAction)
+                        
+                            self.present(alertController, animated: true, completion: nil)
+                        
+                        self.titleField.text = ""
+                        self.descriptField.text = ""
+                        self.priceField.text = ""
         
                     })
+        
         
         //And head back to the last visited page (should be the beautiful landing page right now)
         //self.dismiss(animated: true, completion: nil)   //Does having a navigation controller completely negate this? That's unfortunate :(

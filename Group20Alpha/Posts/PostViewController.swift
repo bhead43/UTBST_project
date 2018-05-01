@@ -23,7 +23,10 @@ class PostViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
+
     @IBOutlet weak var commentsTextView: UITextView!
+    
+    
     @IBAction func showCommentsButtonClick(_ sender: Any) {
         
         
@@ -97,10 +100,10 @@ class PostViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func clearCommentAction(_ sender: Any) {
+
+    @IBAction func clearCommentButton(_ sender: Any) {
         clearCommentSection()
     }
-    
     func clearCommentSection() {
         commentsTextView.text = ""
     }
