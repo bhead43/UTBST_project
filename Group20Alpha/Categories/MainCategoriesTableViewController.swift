@@ -13,10 +13,17 @@ import Foundation   //Still don't know if we need this or not. Honestly have no 
 class MainCategoriesTableViewController: UITableViewController {
 
     let categories: [String] = ["Clothing",
+                                "Jewelry",
                                 "Home",
                                 "Electronics",
                                 "School",
-                                "Services"] //Might expand this back to where it was later. Just trimming it back down for now to get things up and running faster
+                                "Services",
+                                "Tickets",
+                                "Automotive",
+                                "Housing Locators",
+                                "Food Services",
+                                "Interior Design / Maintenance"]
+                                //Might expand this back to where it was later. Just trimming it back down for now to get things up and running faster
     override func viewDidLoad() {
         super.viewDidLoad()
 
