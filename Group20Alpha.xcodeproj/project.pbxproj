@@ -32,6 +32,7 @@
 		FA30AEAD209634710045D9E9 /* ManagePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30AEAC209634710045D9E9 /* ManagePostViewController.swift */; };
 		FA30AEAF20964AA00045D9E9 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30AEAE20964AA00045D9E9 /* CommentsTableViewController.swift */; };
 		FA30AEB120964F7E0045D9E9 /* CommentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30AEB020964F7E0045D9E9 /* CommentsTableViewCell.swift */; };
+		FA30AEB5209830FF0045D9E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30AEB4209830FF0045D9E9 /* Main.storyboard */; };
 		FA44B0DB2086B92A000A3903 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA44B0DA2086B92A000A3903 /* GoogleService-Info.plist */; };
 		FA8541D6208C228A00C6279C /* UILable_Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8541D5208C228A00C6279C /* UILable_Extenstion.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		FA30AEAC209634710045D9E9 /* ManagePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostViewController.swift; sourceTree = "<group>"; };
 		FA30AEAE20964AA00045D9E9 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		FA30AEB020964F7E0045D9E9 /* CommentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewCell.swift; sourceTree = "<group>"; };
+		FA30AEB4209830FF0045D9E9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA44B0DA2086B92A000A3903 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FA8541D5208C228A00C6279C /* UILable_Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILable_Extenstion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,7 +209,11 @@
 		FA8541CE208C1C9000C6279C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BD0846F62098F56100FEFEDD /* Main.storyboard */,
+=======
+				FA30AEB4209830FF0045D9E9 /* Main.storyboard */,
+>>>>>>> 2221666c8ada69c697d663e58010db613b39bc0a
 				E4FBBB4920965970001FF74E /* landingScreenViewController.swift */,
 				FA1D5511209047520022AE4B /* MainCategoriesTableViewController.swift */,
 				FA1D551320904C170022AE4B /* SubCategoryTableViewController.swift */,
@@ -277,6 +283,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E491C5872061D56F0008318F /* LaunchScreen.storyboard in Resources */,
+<<<<<<< HEAD
+=======
+				FA30AEB5209830FF0045D9E9 /* Main.storyboard in Resources */,
+>>>>>>> 2221666c8ada69c697d663e58010db613b39bc0a
 				FA44B0DB2086B92A000A3903 /* GoogleService-Info.plist in Resources */,
 				E491C5842061D56F0008318F /* Assets.xcassets in Resources */,
 				BD0846F72098F56100FEFEDD /* Main.storyboard in Resources */,
