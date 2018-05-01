@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class PostViewController: UIViewController {
-
+    
     var ref: DatabaseReference!
     
     //receives the data from Post variable from SubCategory table with values for
@@ -21,7 +21,6 @@ class PostViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var commentsLabel: UILabel!
     
     //@IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
@@ -39,14 +38,14 @@ class PostViewController: UIViewController {
             alertController.addAction(defaultAction)
             present(alertController, animated: true, completion: nil)
             return
-        
-        if ((post?.postComments.count)! <= 1){
-             let alertController = UIAlertController(title: "Alert", message: "There are still no comments for this post yet.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Close Alert", style: .default, handler: nil)
-            present(alertController, animated: true, completion: nil)
-            return
+            
+            if ((post?.postComments.count)! <= 1){
+                let alertController = UIAlertController(title: "Alert", message: "There are still no comments for this post yet.", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "Close Alert", style: .default, handler: nil)
+                present(alertController, animated: true, completion: nil)
+                return
+            }
         }
-    }
         
     }
     
@@ -92,9 +91,11 @@ class PostViewController: UIViewController {
                 let postUserID = postObject?["userID"]
                 let postID = postObject?["postID"]
                 var postComments = postObject?["comments"] as! [String]
+                let postImageEncoded = postObject?["imageEncoded"] as! String
                 
                 let comment: String = "\(userName ?? ""): \(self.userInputComments.text!)"
                 postComments.append(comment)
+                
                 
                 
                 let postData: [String: Any] = [
@@ -104,7 +105,8 @@ class PostViewController: UIViewController {
                     "category": postCategory!,
                     "userID": postUserID!,
                     "postID": postID!,
-                    "comments": postComments
+                    "comments": postComments,
+                    "imageEncoded": postImageEncoded
                 ]
                 self.ref.setValue(postData)
             })
@@ -116,7 +118,7 @@ class PostViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-
+    
     @IBAction func clearCommentButton(_ sender: Any) {
         clearCommentSection()
     }
@@ -131,19 +133,19 @@ class PostViewController: UIViewController {
         priceLabel.text = post!.postPrice
         
         imageView.image = post!.postImage
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? CommentsTableViewController {
@@ -151,5 +153,6 @@ class PostViewController: UIViewController {
         }
     }
     
-
+    
 }
+

@@ -11,7 +11,7 @@ import Firebase
 import Foundation
 
 class CreatePostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
-
+    
     var ref: DatabaseReference!
     
     @IBOutlet weak var titleField: UITextField!
@@ -41,7 +41,7 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
                       "Electronics",
                       "School",
                       "Services"]   //Ripped straight from MainCategoriesController
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -58,7 +58,7 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
         // This causes the keyboard to be dismissed.
         self.view.endEditing(true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -109,25 +109,25 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
         selectedCategory = categories[row] as String
     }
     
-//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
-//        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            imageView.contentMode = .scaleAspectFit
-//            imageView.image = pickedImage
-//        }
-//
-//        dismiss(animated: true, completion: nil)
-//    }
-//
-
+    //    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject]) {
+    //        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+    //            imageView.contentMode = .scaleAspectFit
+    //            imageView.image = pickedImage
+    //        }
+    //
+    //        dismiss(animated: true, completion: nil)
+    //    }
+    //
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     @IBAction func createButtonPressed(_ sender: Any) {
         //Create a new Post object using the data given here
         let postTitle: String = titleField.text!    //Assumes that there will NEVER be a nil value in any of these fields, which is pretty dumb. Fix later!
@@ -163,40 +163,40 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
         
         //This all works now! DON'T TOUCH THIS FOR THE LOVE OF ALL THAT IS HOLY
         ref?.child("users").child((Auth.auth().currentUser?.uid)!)
-                    .observeSingleEvent(of: .value, with: { (snapshot) in
-        
-                        let userDict = snapshot.value as! [String: Any]
-                        print ("this is old user dict asgiment")
-                        print (userDict)
-        
-                        var totalPosts = userDict["numPosts"] as! Int
-                        var displayName = userDict["name"] as! String
-                        var postList = userDict["posts"] as! [String]
-                        totalPosts += 1
-                        postList.append(autoID)
-                        print ("this is new user dict asgiment")
-                        print (userDict)
-                        
-                        let userData: [String: Any] = [
-                            "name": displayName,
-                            "posts": postList,
-                            "numPosts": totalPosts
-                        ]   //This creates a data set with everything the user needs.
-                        
-                        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Updates the user with ALL of its info, even the sutff that didn't get touched (display name, previous posts)
-                        
-                        
-                            let alertController = UIAlertController(title: "Comment Recorded", message: "Your comment has been recorded!", preferredStyle: .alert)
-                            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                            alertController.addAction(defaultAction)
-                        
-                            self.present(alertController, animated: true, completion: nil)
-                        
-                        self.titleField.text = ""
-                        self.descriptField.text = ""
-                        self.priceField.text = ""
-        
-                    })
+            .observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                let userDict = snapshot.value as! [String: Any]
+                print ("this is old user dict asgiment")
+                print (userDict)
+                
+                var totalPosts = userDict["numPosts"] as! Int
+                var displayName = userDict["name"] as! String
+                var postList = userDict["posts"] as! [String]
+                totalPosts += 1
+                postList.append(autoID)
+                print ("this is new user dict asgiment")
+                print (userDict)
+                
+                let userData: [String: Any] = [
+                    "name": displayName,
+                    "posts": postList,
+                    "numPosts": totalPosts
+                ]   //This creates a data set with everything the user needs.
+                
+                self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Updates the user with ALL of its info, even the sutff that didn't get touched (display name, previous posts)
+                
+                
+                let alertController = UIAlertController(title: "Comment Recorded", message: "Your comment has been recorded!", preferredStyle: .alert)
+                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+                self.titleField.text = ""
+                self.descriptField.text = ""
+                self.priceField.text = ""
+                
+            })
         
         
         //And head back to the last visited page (should be the beautiful landing page right now)
@@ -205,3 +205,4 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
     }
     
 }
+
