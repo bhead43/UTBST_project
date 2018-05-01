@@ -59,6 +59,9 @@ class MainCategoriesTableViewController: UITableViewController {
         let category = categories[indexPath.row]
         cell.textLabel?.text = category
         
+        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.font = UIFont(name:"ChalkboardSE-Regular", size: 26.0)
+
         return cell
     }
     
@@ -97,6 +100,15 @@ class MainCategoriesTableViewController: UITableViewController {
      return true
      }
      */
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height:CGFloat = CGFloat()
+        if indexPath.row >= 0 {
+            height = 90
+        }
+
+        
+        return height
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? SubCategoryTableViewController,
