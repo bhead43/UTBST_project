@@ -45,6 +45,19 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
         // Do any additional setup after loading the view.
     }
     
+    //Stuff for keyboards
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // 'First Responder' is the same as 'input focus'.
+        // We are removing input focus from the text field.
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    //STILL NOT MY CODE
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // This causes the keyboard to be dismissed.
+        self.view.endEditing(true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
