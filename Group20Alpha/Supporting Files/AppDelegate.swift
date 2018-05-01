@@ -21,31 +21,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //UIApplication.shared.statusBarStyle = .lightContent
-        //window = UIWindow(frame: UIScreen.main.bounds)
-        //window?.makeKeyAndVisible()
-//
-//        let loginController = UINavigationController(rootViewController: LoginController())
-//        let categoriesController = UINavigationController(rootViewController: CategoriesController())
-//        let mainController = UINavigationController(rootViewController: MainController())
-        //let startController = UINavigationController(rootViewController: LoginViewController())
-//
-//        //Just for testing, remove from final product
-//        //let categoriesController = UINavigationController(rootViewController: CategoriesController())
-//
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        //Uncomment this stuff to make the stay logged in stuff kind of work. Nav controller won't show up here now, though.
+        //Feel free to tinker with this if you think you'll have better luck than I have for hte last 20 minutes
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let navController = storyboard.instantiateInitialViewController() as! UINavigationController
+//        self.window?.rootViewController = navController
+//        let loginController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+//        let landingController = storyboard.instantiateViewController(withIdentifier: "LandingController")
         FirebaseApp.configure()
         userIsLoggedIn = defaults.bool(forKey: "UserIsLoggedIn")
-//
-//        //Uncomment these lines to get things back to normal!
+        
+        //Uncomment these lines to get things back to normal!
 //        if userIsLoggedIn == true {
-//            window?.rootViewController = categoriesController
+//            self.window?.rootViewController = landingController
+//            self.window?.makeKeyAndVisible()
 //        } else {
-//            window?.rootViewController = loginController
+//            self.window?.rootViewController = loginController
+//            self.window?.makeKeyAndVisible()
 //        }
-//
-//        //Just for testing, remove from final product
-        //window?.rootViewController = startController
-        //Should probably just delete all this commented out stuff? I'm scared that the Swift gods will punish me if I do, though, so it stays.
         
         return true
     }
