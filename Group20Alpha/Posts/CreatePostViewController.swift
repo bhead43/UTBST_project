@@ -13,7 +13,7 @@ import Foundation
 class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var ref: DatabaseReference!
-    var picker = UIImagePickerController()
+    let picker = UIImagePickerController()
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptField: UITextView!
@@ -29,12 +29,14 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectButton.isHidden = false
+        
         ref = Database.database().reference()
         
         //Do stuff for the PickerView (that's a god-awful name, just by the by)
         self.catPicker.delegate = self
         self.catPicker.dataSource = self
-            picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         //Populate the picker stuff
         categories = ["Clothing",
                       "Home",
@@ -45,15 +47,6 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         // Do any additional setup after loading the view.
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
-            self.imageView.image = image
-            selectButton.isHidden = true
-        }
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -61,10 +54,28 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func selectPicturePressed(_ sender: Any) {
-        picker.allowsEditing = false
+        picker.allowsEditing = true
         picker.sourceType = .photoLibrary
         
-        self.present(picker, animated: true, completion: nil)
+        present(picker, animated: true, completion: nil)
+    }
+    
+    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if picker.allowsEditing == true {
+            imge = info[UIImagePickerControllerEditedImage] as? UIImage
+        } else {
+            sourceImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        }
+            imageView.contentMode = .scaleAspectFit
+            imageView.image = image
+            selectButton.isHidden = true
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     //Pickerview Stuff!
