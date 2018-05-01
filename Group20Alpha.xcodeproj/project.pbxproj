@@ -210,7 +210,11 @@
 			isa = PBXGroup;
 			children = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 				BD18089220982188008F1706 /* Main.storyboard */,
+=======
+				E4604D67209824BB00A8B4B4 /* Main.storyboard */,
+>>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
 =======
 				E4604D67209824BB00A8B4B4 /* Main.storyboard */,
 >>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
@@ -284,6 +288,10 @@
 			files = (
 				E491C5872061D56F0008318F /* LaunchScreen.storyboard in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+				E4604D68209824BB00A8B4B4 /* Main.storyboard in Resources */,
+>>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
 =======
 				E4604D68209824BB00A8B4B4 /* Main.storyboard in Resources */,
 >>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39

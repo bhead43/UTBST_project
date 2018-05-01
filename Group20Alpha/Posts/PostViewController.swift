@@ -24,7 +24,12 @@ class PostViewController: UIViewController {
     @IBOutlet weak var commentsLabel: UILabel!
     
 <<<<<<< HEAD
+<<<<<<< HEAD
     @IBOutlet weak var fireImage: UIImageView!
+=======
+    //@IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+>>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
 =======
     //@IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
@@ -135,6 +140,7 @@ class PostViewController: UIViewController {
         priceLabel.text = post!.postPrice
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         downloadPhoto()
         
         func downloadPhoto () {
@@ -153,6 +159,9 @@ class PostViewController: UIViewController {
                             self.fireImage.image = photo.image
                 })
         }
+=======
+        imageView.image = post!.postImage
+>>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
 =======
         imageView.image = post!.postImage
 >>>>>>> 978ac7f78625880a83e01e26429857fb94ad4a39
