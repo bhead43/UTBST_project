@@ -192,9 +192,9 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
                 
                 self.present(alertController, animated: true, completion: nil)
                 
-                self.titleField.text = ""
-                self.descriptField.text = ""
-                self.priceField.text = ""
+                //self.titleField.text = ""
+                //self.descriptField.text = ""
+                //self.priceField.text = ""
                 
             })
         
