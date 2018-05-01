@@ -23,7 +23,9 @@ class PostViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
     
-
+    //@IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+    
     @IBOutlet weak var commentsTextView: UITextView!
     
     
@@ -127,6 +129,8 @@ class PostViewController: UIViewController {
         titleLabel.text = post!.postTitle
         descriptLabel.text = post!.postDescription
         priceLabel.text = post!.postPrice
+        
+        imageView.image = post!.postImage
 
         // Do any additional setup after loading the view.
     }

@@ -134,6 +134,9 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
         let postDescription: String = descriptField.text!
         let postPrice: String = priceField.text!    //This is making a pretty big assumption that there'll only be numbers in that field... Should probably add some failsafes later
         let postCategory: String = selectedCategory
+        let postImage: UIImage = self.imageView.image!  //Is this actually getting an image?
+        //Encode the image as a string
+        let postImageEncoded = (UIImageJPEGRepresentation(postImage, 0.25)?.base64EncodedString()) as! String //Is this guy already a String? I hope so.
         
         let autoIdInt = Int((Date().timeIntervalSince1970 * 1000).rounded())
         let autoID = String(autoIdInt)
@@ -150,7 +153,8 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
             "category": postCategory,
             "userID": Auth.auth().currentUser?.uid,
             "postID": autoID,    //Probably wouldn't hurt to save this as a part of the post as well. Will almost certainly make life better in the future.
-            "comments": comments
+            "comments": comments,
+            "imageEncoded": postImageEncoded
             
         ]
         //Push to the database
