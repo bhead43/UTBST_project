@@ -21,7 +21,6 @@ class PostViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var commentsLabel: UILabel!
     
     //@IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
@@ -92,9 +91,11 @@ class PostViewController: UIViewController {
                 let postUserID = postObject?["userID"]
                 let postID = postObject?["postID"]
                 var postComments = postObject?["comments"] as! [String]
+                let postImageEncoded = postObject?["imageEncoded"] as! String
                 
                 let comment: String = "\(userName ?? ""): \(self.userInputComments.text!)"
                 postComments.append(comment)
+
                 
                 
                 let postData: [String: Any] = [
@@ -104,7 +105,8 @@ class PostViewController: UIViewController {
                     "category": postCategory!,
                     "userID": postUserID!,
                     "postID": postID!,
-                    "comments": postComments
+                    "comments": postComments,
+                    "imageEncoded": postImageEncoded
                 ]
                 self.ref.setValue(postData)
             })
