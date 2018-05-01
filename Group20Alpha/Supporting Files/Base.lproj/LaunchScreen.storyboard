@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,26 +26,24 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UTBST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C6M-bf-kGL">
                                 <rect key="frame" x="0.0" y="290" width="375" height="77"/>
-                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="52"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="41"/>
                                 <color key="textColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="Hm6-mI-2q5">
-                                <rect key="frame" x="0.0" y="171" width="375" height="325"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="325" id="Uth-GZ-bLf"/>
-                                    <constraint firstAttribute="width" constant="375" id="fYH-N5-Sy0"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="171" width="343" height="325"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.11886216434068604" green="0.33510014101587099" blue="0.61545384837891248" alpha="0.69006359432278597" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="C6M-bf-kGL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="2wo-bn-JeX"/>
-                            <constraint firstItem="C6M-bf-kGL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5xC-r4-HH4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="C6M-bf-kGL" secondAttribute="trailing" id="8xq-sg-qXL"/>
-                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eP7-9y-Pz1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C6M-bf-kGL" secondAttribute="bottom" constant="300" id="rHb-n0-ls5"/>
-                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vrV-AN-h4w"/>
+                            <constraint firstItem="C6M-bf-kGL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="1di-Ph-ggG"/>
+                            <constraint firstItem="C6M-bf-kGL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="7Gb-4o-hhe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="C6M-bf-kGL" secondAttribute="bottom" constant="300" id="Lvi-fG-4Ws"/>
+                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="151" id="Qz6-Bk-zjr"/>
+                            <constraint firstAttribute="trailing" secondItem="C6M-bf-kGL" secondAttribute="trailing" id="b7A-AH-Ne7"/>
+                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jN6-z9-GQ6"/>
+                            <constraint firstItem="Hm6-mI-2q5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="ofl-cG-xr2"/>
+                            <constraint firstItem="C6M-bf-kGL" firstAttribute="centerX" secondItem="Hm6-mI-2q5" secondAttribute="centerX" id="yJZ-Uv-bEX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
