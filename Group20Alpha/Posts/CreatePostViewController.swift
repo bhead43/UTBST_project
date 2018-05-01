@@ -10,10 +10,9 @@ import UIKit
 import Firebase
 import Foundation
 
-class CreatePostViewController: UIViewController, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class CreatePostViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var ref: DatabaseReference!
-    let picker = UIImagePickerController()
     
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptField: UITextView!
@@ -36,7 +35,6 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
         //Do stuff for the PickerView (that's a god-awful name, just by the by)
         self.catPicker.delegate = self
         self.catPicker.dataSource = self
-        picker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
         //Populate the picker stuff
         categories = ["Clothing",
                       "Home",
@@ -54,24 +52,26 @@ class CreatePostViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func selectPicturePressed(_ sender: Any) {
-        picker.allowsEditing = true
-        picker.sourceType = .photoLibrary
+        let image = UIImagePickerController()
+        image.delegate = self
         
-        present(picker, animated: true, completion: nil)
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        
+        image.allowsEditing = false
+        
+        self.present(image, animated: true)
+        
     }
     
-    private func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if picker.allowsEditing == true {
-            imge = info[UIImagePickerControllerEditedImage] as? UIImage
-        } else {
-            sourceImage = info[UIImagePickerControllerOriginalImage] as? UIImage
-        }
-            imageView.contentMode = .scaleAspectFit
+    // I hate Xcode
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
-            selectButton.isHidden = true
+        } else {
+            // error message
         }
-        
-        dismiss(animated: true, completion: nil)
+        selectButton.isHidden = true
+        self.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
