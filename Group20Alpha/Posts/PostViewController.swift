@@ -21,6 +21,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
     //@IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageView: UIImageView!
@@ -116,6 +117,8 @@ class PostViewController: UIViewController {
         alertController.addAction(defaultAction)
         
         present(alertController, animated: true, completion: nil)
+        
+        
     }
     
     
@@ -134,6 +137,14 @@ class PostViewController: UIViewController {
         
         imageView.image = post!.postImage
         
+        ref = Database.database().reference().child("users").child(post!.postUser!)
+        ref?.observeSingleEvent(of: .value, with: { (snapshot) in
+            let userDict = snapshot.value as! [String: Any]
+            
+            let userName = userDict["name"] as! String
+            
+            self.nameLabel.text = "Posted by: \(userName)"
+        })
         // Do any additional setup after loading the view.
     }
     

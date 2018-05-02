@@ -95,7 +95,8 @@ class CommentsTableViewController: UITableViewController {
         
         let currentPost = commentsList[indexPath.row]
         cell.commentLabel.text = currentPost
-        
+        cell.textLabel?.textAlignment = .left
+        cell.textLabel?.font = UIFont(name:"ChalkboardSE-Regular", size: 14.0)
         return cell
     }
     

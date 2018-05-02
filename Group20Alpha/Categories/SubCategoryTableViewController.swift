@@ -54,6 +54,8 @@ class SubCategoryTableViewController: UITableViewController {
                 }
                 
                 //reloading the tableview
+                //Reverse the list
+                self.postList.reverse()
                 self.tableView.reloadData()
             }
         })
@@ -83,6 +85,15 @@ class SubCategoryTableViewController: UITableViewController {
         return postList.count
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height:CGFloat = CGFloat()
+        if indexPath.row >= 0 {
+            height = 60
+        }
+        
+        
+        return height
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subCatCell", for: indexPath)
@@ -90,8 +101,13 @@ class SubCategoryTableViewController: UITableViewController {
         let currentPost = postList[indexPath.row]
         cell.textLabel?.text = currentPost.postTitle
         
+        cell.textLabel?.textAlignment = .left
+        cell.textLabel?.font = UIFont(name:"ChalkboardSE-Regular", size: 16.0)
+        
         return cell
     }
+    
+    
     
     
     /*

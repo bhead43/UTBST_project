@@ -37,10 +37,17 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
         self.catPicker.dataSource = self
         //Populate the picker stuff
         categories = ["Clothing",
+                      "Jewelry",
                       "Home",
                       "Electronics",
                       "School",
-                      "Services"]   //Ripped straight from MainCategoriesController
+                      "Services",
+                      "Tickets",
+                        "Automotive",
+        "Housing Locators",
+        "Food Services",
+        "Interior Design / Maintenace",
+        "Miscellaneous"]   //Ripped straight from MainCategoriesController
         
         // Do any additional setup after loading the view.
     }
@@ -134,69 +141,80 @@ class CreatePostViewController: UIViewController, UINavigationControllerDelegate
         let postDescription: String = descriptField.text!
         let postPrice: String = priceField.text!    //This is making a pretty big assumption that there'll only be numbers in that field... Should probably add some failsafes later
         let postCategory: String = selectedCategory
-        let postImage: UIImage = self.imageView.image!  //Is this actually getting an image?
+        guard let postImage: UIImage = self.imageView.image else {
+            let alertController = UIAlertController(title: "Warning", message: "All fields must include an entry!", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+            
+        } //Is this actually getting an image?
         //Encode the image as a string
         let postImageEncoded = (UIImageJPEGRepresentation(postImage, 0.25)?.base64EncodedString()) as! String //Is this guy already a String? I hope so.
         
-        let autoIdInt = Int((Date().timeIntervalSince1970 * 1000).rounded())
-        let autoID = String(autoIdInt)
-        //Debug
-        print(autoID)
-        
-        let comments: [String] = ["Placeholder"]
-        
-        //Put all of this stuff into a Firebase friendly thing
-        let postData: [String: Any] = [
-            "title": postTitle,
-            "description": postDescription,
-            "price": postPrice,
-            "category": postCategory,
-            "userID": Auth.auth().currentUser?.uid,
-            "postID": autoID,    //Probably wouldn't hurt to save this as a part of the post as well. Will almost certainly make life better in the future.
-            "comments": comments,
-            "imageEncoded": postImageEncoded
+        if (postImageEncoded != "" && postTitle != "" && postDescription != "" && postPrice != ""){
             
-        ]
-        //Push to the database
-        //let autoID = String((Date().timeIntervalSince1970 * 1000.0).rounded())
-        self.ref.child(postCategory).child(autoID).setValue(postData)
+            let autoIdInt = Int((Date().timeIntervalSince1970 * 1000).rounded())
+            let autoID = String(autoIdInt)
+            //Debug
+            print(autoID)
         
-        //This all works now! DON'T TOUCH THIS FOR THE LOVE OF ALL THAT IS HOLY
-        ref?.child("users").child((Auth.auth().currentUser?.uid)!)
-            .observeSingleEvent(of: .value, with: { (snapshot) in
+            let comments: [String] = ["Placeholder"]
+        
+            //Put all of this stuff into a Firebase friendly thing
+            let postData: [String: Any] = [
+                "title": postTitle,
+                "description": postDescription,
+                "price": postPrice,
+                "category": postCategory,
+                "userID": Auth.auth().currentUser?.uid,
+                "postID": autoID,    //Probably wouldn't hurt to save this as a part of the post as well. Will almost certainly make life better in the future.
+                "comments": comments,
+                "imageEncoded": postImageEncoded
                 
-                let userDict = snapshot.value as! [String: Any]
-                print ("this is old user dict asgiment")
-                print (userDict)
-                
-                var totalPosts = userDict["numPosts"] as! Int
-                var displayName = userDict["name"] as! String
-                var postList = userDict["posts"] as! [String]
-                totalPosts += 1
-                postList.append(autoID)
-                print ("this is new user dict asgiment")
-                print (userDict)
-                
-                let userData: [String: Any] = [
-                    "name": displayName,
-                    "posts": postList,
-                    "numPosts": totalPosts
-                ]   //This creates a data set with everything the user needs.
-                
-                self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Updates the user with ALL of its info, even the sutff that didn't get touched (display name, previous posts)
-                
-                
-                let alertController = UIAlertController(title: "Comment Recorded", message: "Your comment has been recorded!", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(defaultAction)
-                
-                self.present(alertController, animated: true, completion: nil)
-                
-                //self.titleField.text = ""
-                //self.descriptField.text = ""
-                //self.priceField.text = ""
-                
-            })
+            ]
+            //Push to the database
+            //let autoID = String((Date().timeIntervalSince1970 * 1000.0).rounded())
+            self.ref.child(postCategory).child(autoID).setValue(postData)
+        
+            //This all works now! DON'T TOUCH THIS FOR THE LOVE OF ALL THAT IS HOLY
+            ref?.child("users").child((Auth.auth().currentUser?.uid)!)
+                .observeSingleEvent(of: .value, with: { (snapshot) in
+                    
+                    let userDict = snapshot.value as! [String: Any]
+                    print ("this is old user dict asgiment")
+                    print (userDict)
+                    
+                    var totalPosts = userDict["numPosts"] as! Int
+                    var displayName = userDict["name"] as! String
+                    var postList = userDict["posts"] as! [String]
+                    totalPosts += 1
+                    postList.append(autoID)
+                    print ("this is new user dict asgiment")
+                    print (userDict)
+                    
+                    let userData: [String: Any] = [
+                        "name": displayName,
+                        "posts": postList,
+                        "numPosts": totalPosts
+                    ]   //This creates a data set with everything the user needs.
+                    
+                    self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(userData)   //Updates the user with ALL of its info, even the sutff that didn't get touched (display name, previous posts)
+                    
+                    
+                    let alertController = UIAlertController(title: "Item Posted", message: "Your item has been posted!", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    self.titleField.text = ""
+                    self.descriptField.text = ""
+                    self.priceField.text = ""
+                    
+                })
+            }
         
         
         //And head back to the last visited page (should be the beautiful landing page right now)

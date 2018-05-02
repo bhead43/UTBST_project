@@ -12,9 +12,9 @@ import Firebase
 class ManagePostViewController: UIViewController {
     var ref: DatabaseReference!
     var currentPost: Post?
-    
-    @IBOutlet weak var titleLabel: UILabel!
+
     @IBOutlet weak var descriptLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
     override func viewDidLoad() {
@@ -33,15 +33,16 @@ class ManagePostViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let destinationVC = segue.destination as? CommentsTableViewController {
+            destinationVC.currentPost = currentPost
+        }
     }
-    */
+    
     
     @IBAction func deleteButtonPressed(_ sender: Any) {
         //something something key.removeValues()

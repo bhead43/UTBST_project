@@ -17,7 +17,7 @@ import Firebase
 class ManagePostsTableViewController: UITableViewController {
 
     var ref: DatabaseReference!
-    var categories: [String] = ["Clothing", "Electronics", "Home", "School", "Services"]
+    var categories: [String] = ["Clothing", "Jewelry", "Home", "Electronics", "School", "Services", "Tickets", "Automotive", "Housing Locators", "Food Services", "Interior Design / Maintenace", "Miscellaneous"]
     var idList: [String] = []   //Empty for now, will be filled in the snapshot event below
     var postList: [Post] = []
     
@@ -82,6 +82,8 @@ class ManagePostsTableViewController: UITableViewController {
                             }
                         }
                         //reloading the tableview
+                        //Reverse postList
+                        self.postList.reverse()
                         self.tableView.reloadData()
                     }
                 })
@@ -112,7 +114,8 @@ class ManagePostsTableViewController: UITableViewController {
         
         let currentPost = postList[indexPath.row]
         cell.textLabel?.text = currentPost.postTitle
-        
+        cell.textLabel?.textAlignment = .center
+        cell.textLabel?.font = UIFont(name:"ChalkboardSE-Regular", size: 26.0)
         return cell
     }
  
